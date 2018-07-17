@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-thalisplugin" version="0.0.1">
+    <name>ThalisPlugin</name>
+
+    <description>An Android Cordova plugin that allows users to display simple Toast messages at the bottom of the screen.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,toast,message,alert</keywords>
+    <repo>https://github.com/tpapak01/ThalisPlugin.git</repo>
+    <issue>https://github.com/tpapak01/ThalisPlugin/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=7.0.0"/>
+    </engines>
+  
+    <js-module src="www/thalisPlugin.js" name="thalisPlugin">
+        <clobbers target="window.plugins.thalisPlugin" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ThalisPlugin">
+                <param name="android-package" value="com.example.cordova.plugin.ThalisPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/ThalisPlugin.java" target-dir="src/com/example/cordova/plugin" />
+    </platform>
+</plugin>
